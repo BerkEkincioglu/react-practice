@@ -31,6 +31,18 @@ const options = [
     label: 'The color blue',
     value: 'blue',
   },
+  {
+    label: 'The color yellow',
+    value: 'yellow',
+  },
+  {
+    label: 'The color grey',
+    value: 'grey',
+  },
+  {
+    label: 'The color orange',
+    value: 'orange',
+  },
 ];
 
 const App = () => {
