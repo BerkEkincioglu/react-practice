@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import Accordion from './components/Accordion';
 import Dropdown from './components/Dropdown';
+import Header from './components/Header';
 import Search from './components/Search';
-import Translate from './components/Translate';
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 const items = [
   {
     title: 'What is React',
@@ -49,9 +49,18 @@ const options = [
 const App = () => {
   return (
     <Fragment>
-      {/* <Dropdown options={options} /> */}
-      {/* <Accordion items={items} /> */}
-      {/* <Search /> */}
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path='/' component={() => <Accordion items={items} />} />
+          <Route
+            exact
+            path='/dropdown'
+            component={() => <Dropdown options={options} />}
+          />
+          <Route exact path='/list' component={Search} />
+        </Switch>
+      </Router>
     </Fragment>
   );
 };
